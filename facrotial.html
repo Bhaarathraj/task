@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>two</title>
+</head>
+
+<body>
+    <p id="task" style="font-size: 15px; font-weight: bold;">
+    </p>
+    <button onclick="result()">
+        Calculate factorial
+    </button>
+
+    <p id="task1" style="color:green; font-size: 20px; font-weight: bold;">
+    </p>
+    <p id="task2" style="color:green; font-size: 20px; font-weight: bold;">
+    </p>
+
+    <script>
+        let up = document.getElementById('task');
+        let sum = document.getElementById('task1');
+        let zero = document.getElementById('task2');
+        let n = 5;
+
+        up.innerHTML = "Click on the button to calculate"
+            + " the factorial of n.<br>n = " + n;
+
+        function Factorial(n) {
+            let ans = 1;
+
+            for (let i = 2; i <= n; i++)
+                ans = ans * i;
+            return ans;
+        }
+        function find(n){
+            let sum=0,count=0,a,b;
+            sum = Factorial(n);
+            while(sum>0){
+                b=sum%10;
+                sum=parseInt(sum/10);
+                if(b==0)
+                {
+                    count++;
+                }
+                return count;
+            }
+
+        }
+
+        function result() {
+            sum.innerHTML = Factorial(n);
+            zero.innerHTML = find(n);
+
+        } 
+    </script>
+</body>
+
+</html>
